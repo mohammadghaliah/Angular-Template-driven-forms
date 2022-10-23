@@ -1,4 +1,5 @@
 import { Component, VERSION } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'my-app',
@@ -7,10 +8,11 @@ import { Component, VERSION } from '@angular/core';
 })
 export class AppComponent {
   email: any;
-  onSubmit(contactForm) {
-    // if (contactForm.valid) {
-    console.log(contactForm.value);
-    // }
+  onSubmit(contactForm: NgForm) {
+    console.log(contactForm);
+    if (contactForm.valid) {
+      console.log(contactForm.value);
+    }
   }
 
   click() {
